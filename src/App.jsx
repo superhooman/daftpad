@@ -411,10 +411,10 @@ class App extends Component {
               </div>
             ))
           }
-          <div className="footer">
-            <p>Inspired by <a href="https://github.com/KOWLOR/">Kowlor</a>'s #DaftPunKonsole</p>
-            <p>Made by <a href="https://github.com/uenify">uenify</a></p>
-          </div>
+        </div>
+        <div className="footer">
+          <p>Inspired by <a href="https://github.com/KOWLOR/">Kowlor</a>'s #DaftPunKonsole</p>
+          <p>Made by <a href="https://github.com/uenify">uenify</a></p>
         </div>
       </div>
     );
