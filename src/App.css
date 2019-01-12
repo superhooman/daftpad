@@ -1,32 +1,185 @@
-.App {
+body{
+  background-color: #101012;
+  height: 100vh;
+}
+#root, .App{
+  height: 100%;
+}
+.App{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.row{
+  display: flex;
+}
+.row-2{
+  margin-left: 20px
+}
+.row-3{
+  margin-left: 40px;
+}
+.key{
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  border-radius: 8px;
+  height: 56px;
+  margin: 4px;
+  width: 56px;
+  border: 2px solid #404048;
+  user-select: none;
+}
+
+.key .label{
+  display: block;
+  position: absolute;
+  bottom: 2px;
+  font-size: 8px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.key:active, .key.is-active{
+  border-color: #4885fb;
+  color: #4885fb;
+  transform: translateY(2px);
+  box-shadow: 0 0 8px 0 rgba(72, 132, 251, 0.256);
+}
+
+.level1 .key.z, .level2 .key.x, .level3 .key.n{
+  color: #d43f57;
+  border-color: #d43f57;
+  box-shadow: 0 0 8px 0 rgba(212, 63, 88, 0.256);
+}
+
+.level-key .label{
+  padding: 2px 8px;
+  background-color: #1b1b1b;
+  bottom: 3px;
+  border-radius: 8px;
+}
+
+.row-4 .key{
+  margin-left: 178px;
+  width: 332px;
+}
+
+.key.disabled:not(.space){
+  opacity: 0.5;
+}
+
+.bar{
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #404048;
+}
+
+.gaben{
+  width: 32px;
+  position: fixed;
+  top: 8px;
+  cursor: pointer;
+  transition: opacity .2s ease-in-out;
+}
+
+.gaben:hover{
+  opacity: 0.7;
+}
+
+.gaben img{
+  width: 100%;
+}
+
+.space .label{
+  position: relative;
+  z-index: 100;
+}
+
+.isCollapsed.keyboard{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 4px;
+  max-width: 500px;
+}
+
+.isCollapsed .t, .isCollapsed .p, .isCollapsed .g, .isCollapsed .semicolon, .isCollapsed .c, .isCollapsed .v, .isCollapsed .b, .isCollapsed .m, .isCollapsed .comma{
+  display: none;
+}
+
+.isCollapsed .key{
+  margin: 4px;
+  border: none;
+  background-color: #404048;
+  width: calc(25% - 8px);
+  padding: 4px 8px;
+  box-sizing: border-box;
+}
+
+.isCollapsed .level-key .label{
+  background-color: transparent;
+}
+
+.isCollapsed .space, .isCollapsed .n{
+  width: calc(100% - 8px);
+}
+
+.isCollapsed .z, .isCollapsed .x{
+  width: calc(50% - 8px);
+}
+
+.isCollapsed .key .letter{
+  display: none;
+}
+
+.isCollapsed .key .label{
+  position: unset;
+  font-size: 14px;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.isCollapsed .key:active, .isCollapsed .key.is-active{
+  background-color: #4885fb;
+  color: #fff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.isCollapsed .space .bar{
+  background-color: #4885fb;
 }
 
-.App-link {
-  color: #61dafb;
+.isCollapsed.level1 .key.z, .isCollapsed.level2 .key.x, .isCollapsed.level3 .key.n{
+  background-color: #d43f57;
+  color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer{
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 100%;
+  font-size: 13px;
+  opacity: .5;
+}
+
+.footer:hover{
+  opacity: 0.8;
+}
+
+.footer p{
+  margin: 0
+}
+
+.footer a{
+  color: #d43f57!important;
+  text-decoration: none;
 }
