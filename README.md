@@ -1,13 +1,12 @@
 # DaftPad
 Harder, better, faster, stronger
-
 Check it [here](http://daftpad.uenify.com/)
 
 ![Screenshot](http://daftpad.uenify.com/banner.png)
 
 ## What is it?
 
-Recreation of [Kowlor](https://github.com/KOWLOR/)'s [DaftPunKonsole]
+Recreation of [Kowlor](https://github.com/KOWLOR/)'s [DaftPunKonsole](https://github.com/KOWLOR/DaftPunKonsole)
 Built on React
 
 ## Contribute
