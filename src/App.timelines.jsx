@@ -7,27 +7,27 @@ import "ion-sound";
 
 let qwerty = [
   [
-    { "letter": "q", "code": 81, sound: "WorkIt", label: "Work It", levels: [1, 2, 4, 5] },
-    { "letter": "w", "code": 87, sound: "MakeIt", label: "Make It", levels: [1, 2, 4, 5] },
-    { "letter": "e", "code": 69, sound: "DoIt", label: "Do it", levels: [1, 2, 4, 5] },
-    { "letter": "r", "code": 82, sound: "MakesUs", label: "Makes Us", levels: [1, 2, 4, 5] },
+    { "letter": "q", "code": 81, sound: "WorkIt", label: "Work It", levels: [1, 2] },
+    { "letter": "w", "code": 87, sound: "MakeIt", label: "Make It", levels: [1, 2] },
+    { "letter": "e", "code": 69, sound: "DoIt", label: "Do it", levels: [1, 2] },
+    { "letter": "r", "code": 82, sound: "MakesUs", label: "Makes Us", levels: [1, 2] },
     { "letter": "t", "code": 84 },
-    { "letter": "y", "code": 89, sound: "MoreThan", label: "More Than", levels: [1, 2, 3, 4, 5, 6] },
-    { "letter": "u", "code": 85, sound: "Hour", label: "Hour", levels: [1, 2, 3, 4, 5, 6] },
-    { "letter": "i", "code": 73, sound: "Our", label: "Our", levels: [1, 2, 3, 4, 5, 6] },
-    { "letter": "o", "code": 79, sound: "Never", label: "Never", levels: [1, 2, 3, 4, 5, 6] },
+    { "letter": "y", "code": 89, sound: "MoreThan", label: "More Than", levels: [1, 2, 3] },
+    { "letter": "u", "code": 85, sound: "Hour", label: "Hour", levels: [1, 2, 3] },
+    { "letter": "i", "code": 73, sound: "Our", label: "Our", levels: [1, 2, 3] },
+    { "letter": "o", "code": 79, sound: "Never", label: "Never", levels: [1, 2, 3] },
     { "letter": "p", "code": 80 }
   ],
   [
-    { "letter": "a", "code": 65, sound: "Harder", label: "Harder", levels: [1, 2, 4, 5] },
-    { "letter": "s", "code": 83, sound: "Better", label: "Better", levels: [1, 2, 4, 5] },
-    { "letter": "d", "code": 68, sound: "Faster", label: "Faster", levels: [1, 2, 4, 5] },
-    { "letter": "f", "code": 70, sound: "Stronger", label: "Stronger", levels: [1, 2, 4, 5] },
+    { "letter": "a", "code": 65, sound: "Harder", label: "Harder", levels: [1, 2] },
+    { "letter": "s", "code": 83, sound: "Better", label: "Better", levels: [1, 2] },
+    { "letter": "d", "code": 68, sound: "Faster", label: "Faster", levels: [1, 2] },
+    { "letter": "f", "code": 70, sound: "Stronger", label: "Stronger", levels: [1, 2] },
     { "letter": "g", "code": 71 },
-    { "letter": "h", "code": 72, sound: "Ever", label: "Ever", levels: [1, 2, 3, 4, 5, 6] },
-    { "letter": "j", "code": 74, sound: "After", label: "After", levels: [1, 2, 3, 4, 5, 6] },
-    { "letter": "k", "code": 75, sound: "WorkIs", label: "Work Is", levels: [1, 2, 3, 4, 5, 6] },
-    { "letter": "l", "code": 76, sound: "Over", label: "Over", levels: [1, 2, 3, 4, 5, 6] },
+    { "letter": "h", "code": 72, sound: "Ever", label: "Ever", levels: [1, 2, 3] },
+    { "letter": "j", "code": 74, sound: "After", label: "After", levels: [1, 2, 3] },
+    { "letter": "k", "code": 75, sound: "WorkIs", label: "Work Is", levels: [1, 2, 3] },
+    { "letter": "l", "code": 76, sound: "Over", label: "Over", levels: [1, 2, 3] },
     { "letter": ";", "code": 186 }
   ],
   [
@@ -42,6 +42,57 @@ let qwerty = [
   ],
   [
     { "letter": "", "code": 32, label: 'Instrumental' }]
+]
+
+let timeline = [
+  {
+    id: 0,
+    time: 46,
+    key: qwerty[0][0],
+    level: 1
+  },
+  {
+    id: 1,
+    time: 47,
+    key: qwerty[0][1],
+    level: 1
+  },
+  {
+    id: 2,
+    time: 48,
+    key: qwerty[0][2],
+    level: 1
+  },
+  {
+    id: 3,
+    time: 49,
+    key: qwerty[0][3],
+    level: 1
+  },
+  {
+    id: 4,
+    time: 54.5,
+    key: qwerty[1][0],
+    level: 1
+  },
+  {
+    id: 5,
+    time: 55.5,
+    key: qwerty[1][1],
+    level: 1
+  },
+  {
+    id: 6,
+    time: 56.5,
+    key: qwerty[1][2],
+    level: 1
+  },
+  {
+    id: 7,
+    time: 57.5,
+    key: qwerty[1][3],
+    level: 1
+  },
 ]
 
 let gaben = [
@@ -91,7 +142,7 @@ class App extends Component {
       level: 1,
       gaben: false,
       isCollapsed: window.innerWidth < 720,
-      src: "classic.mp3",
+      src: "harder.mp3",
       beat: false,
       beatBar: 0,
       keys: [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0]]
@@ -99,6 +150,8 @@ class App extends Component {
     this.onKeyDown = this.onKeyDown.bind(this)
     this.onKeyUp = this.onKeyUp.bind(this)
     this.path = '/sound/'
+    this.currentCell = 0
+    this.cellActive = null
   }
   componentWillMount() {
     window.addEventListener("resize", () => {
@@ -108,13 +161,22 @@ class App extends Component {
     })
     this.beat = new Audio('/sound/' + this.state.src)
     this.beat.addEventListener('timeupdate', () => {
+      let cT = this.beat.currentTime
+      if(cT < timeline[this.currentCell].time + 0.25 && cT > timeline[this.currentCell].time - 0.25){
+        this.cellActive = timeline[this.currentCell]
+      }else if(cT > timeline[this.currentCell].time && this.currentCell !== timeline.length -1){
+        this.cellActive = null
+        this.currentCell++
+      }
       this.setState({
-        beatBar: 100 * this.beat.currentTime / this.beat.duration
+        beatBar: this.beat.currentTime
       })
     });
     window.ion.sound({
       sounds: [
         {
+          name: 'beat'
+        }, {
           name: 'WorkIt1'
         }, {
           name: 'MakeIt1'
@@ -226,7 +288,7 @@ class App extends Component {
           name: 'WorkIsGaben1'
         }, {
           name: 'OverGaben1'
-        }, {
+        },{
           name: 'WorkItGaben2'
         }, {
           name: 'MakeItGaben2'
@@ -359,6 +421,12 @@ class App extends Component {
         if (this.state.keyboard[i][j].code === key) {
           keys[i][j] = true
           if (this.state.keyboard[i][j].sound) {
+
+            if(this.cellActive && (key === this.cellActive.key.code) && this.state.level === this.cellActive.level){
+              console.log('right')
+            }else{
+              console.log('wrong')
+            }
             window.ion.sound.play(this.state.keyboard[i][j].sound + this.state.level)
           } else if (this.state.keyboard[i][j].level) {
             this.setState({
@@ -370,12 +438,11 @@ class App extends Component {
               this.beat.play()
             } else {
               this.beat.pause()
-              this.beat.currentTime = 0
+              //this.beat.currentTime = 0
             }
             this.setState({
               beat: !this.state.beat
             })
-
           }
         }
       }
@@ -412,15 +479,38 @@ class App extends Component {
         }}>
           <img alt={this.state.gaben ? "Gaben photo" : "DaftPunk"} src={this.state.gaben ? gabenFace : daftPunk} />
         </div>
+        <div className="timeline-wrap">
+          <div style={{
+            height: this.beat.duration * 100 + 'px',
+            transform: `translateY(${this.state.beatBar * 100}px)`
+          }} className="timeline">
+            {
+              timeline.map((el)=>(
+                <div key={el.id} style={{
+                  transform: `translateY(-${100 * el.time }px)`
+                }} className={`timeline-cell level-${el.level}`}>
+                  {el.key.label}
+                </div>
+              ))
+            }
+          </div>
+        </div>
+        <div onClick={()=>{
+          this.beat.currentTime = 40
+        }} className={
+          classNames({
+            button: true,
+            disabled: this.state.beatBar > 40
+          })
+        }>
+            Skip intro
+        </div>
         <div className={classNames({
           keyboard: true,
           isCollapsed: this.state.isCollapsed,
           level1: this.state.level === 1,
           level2: this.state.level === 2,
-          level3: this.state.level === 3,
-          level4: this.state.level === 4,
-          level5: this.state.level === 5,
-          level6: this.state.level === 6
+          level3: this.state.level === 3
         })}>
           {this.state.isCollapsed ?
             <Fragment>
@@ -432,9 +522,8 @@ class App extends Component {
                       setTimeout(() => this.onKeyUp(key.code), 100)
                     }} key={j} className={`key ${key.code === 32 ? 'space' : key.letter} ${key.level ? "level-key" : (key.levels && key.levels.indexOf(this.state.level) >= 0 ? 'active' : 'disabled')}${this.state.keys[i][j] ? ' is-active' : ''}`}>
                       <span className="letter">{key.letter}</span>
-                      {key.type ? <span className="type">{key.type}</span> : null}
                       {key.code === 32 ? <div style={{
-                        width: this.state.beatBar + '%'
+                        width: (this.state.beatBar * 100 / this.beat.duration) + '%'
                       }} className="bar"></div> : null}
                       <span className="label">{key.label}</span>
                     </div> : null
@@ -449,9 +538,8 @@ class App extends Component {
                       setTimeout(() => this.onKeyUp(key.code), 100)
                     }} key={j} className={`key ${key.letter === ';' ? 'semicolon' : (key.letter === ',' ? "comma" : key.letter)} ${key.level ? "level-key" : (key.levels && key.levels.indexOf(this.state.level) >= 0 ? 'active' : 'disabled')}${this.state.keys[i][j] ? ' is-active' : ''}`}>
                       <span className="letter">{key.letter}</span>
-                      {key.type ? <span className="type">{key.type}</span> : null}
                       {key.code === 32 ? <div style={{
-                        width: this.state.beatBar + '%'
+                        width: (this.state.beatBar * 100 / this.beat.duration) + '%'
                       }} className="bar"></div> : null}
                       <span className="label">{key.label}</span>
                     </div> : null
@@ -469,42 +557,14 @@ class App extends Component {
                   }} key={j} className={`key ${key.code === 32 ? 'space' : key.letter} ${key.level ? "level-key" : (key.levels && key.levels.indexOf(this.state.level) >= 0 ? 'active' : 'disabled')}${this.state.keys[i][j] ? ' is-active' : ''}`}>
                     <span className="letter">{key.letter}</span>
                     {key.code === 32 ? <div style={{
-                      width: this.state.beatBar + '%'
+                      width: (this.state.beatBar * 100 / this.beat.duration) + '%'
                     }} className="bar"></div> : null}
-                    {key.type ? <span className="type">{key.type}</span> : null}
                     <span className="label">{key.label}</span>
                   </div>
                 ))}
               </div>
             ))
           }
-          <div className={`src-select ${this.state.src.split('.')[0]}`}>
-            <div onClick={() => {
-              if (this.state.src !== 'classic.mp3') {
-                this.setState({
-                  src: 'classic.mp3',
-                  beatBar: 0,
-                  level: 1
-                })
-                this.beat.pause()
-                this.currentTime = 0
-                this.beat.src = this.path + 'classic.mp3'
-              }
-            }} className="src classic">Classic</div>
-            <div className="separator">-</div>
-            <div onClick={() => {
-              if (this.state.src !== 'kanye.mp3') {
-                this.setState({
-                  src: 'kanye.mp3',
-                  beatBar: 0,
-                  level: 4
-                })
-                this.beat.pause()
-                this.currentTime = 0
-                this.beat.src = this.path + 'kanye.mp3'
-              }
-            }} className="src kanye">Kanye</div>
-          </div>
         </div>
         <div className="footer">
           <p>Inspired by <a href="https://github.com/KOWLOR/">Kowlor</a>'s #DaftPunKonsole</p>
